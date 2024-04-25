@@ -4,4 +4,3 @@
 const arr = [1, 2, 3, 4, 5];
 const found = arr.find(x => x > 3);
 console.log(found)
-    
