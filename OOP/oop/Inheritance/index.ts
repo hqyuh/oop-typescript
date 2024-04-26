@@ -1,8 +1,5 @@
 class ShapeV1 {
-    x: number;
-    y: number;
-
-    constructor(x: number, y: number) {
+    constructor(private x: number, private y: number) {
         this.x = x;
         this.y = y;
     }
@@ -13,9 +10,7 @@ class ShapeV1 {
 }
 
 class CircleV1 extends ShapeV1 {
-    radius: number;
-
-    constructor(x: number, y: number, radius: number) {
+    constructor(x: number, y: number, private radius: number) {
         super(x, y); // Call the constructor of the superclass (Shape)
         this.radius = radius;
     }
