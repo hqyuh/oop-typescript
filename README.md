@@ -1,1 +1,1 @@
-# npm install -g ts-node typescript '@types/node'
+# Series of review exercises to pass the interview 2x
