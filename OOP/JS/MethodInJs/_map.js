@@ -3,6 +3,6 @@
 
 const arr = [1, 2, 3, 4, 5];
 const mapped = arr.map((x) => x + 1);
-console.log(mapped)
+console.log(mapped);
 
 // ctrl k q

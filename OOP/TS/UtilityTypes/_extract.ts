@@ -13,4 +13,4 @@ type Shape1 =
   | { kind: "triangle"; x: number; y: number };
 
 // type T2 = { kind: "circle"; radius: number;}
-type T2 = Extract<Shape1, { kind: "triangle"}>
+type T2 = Extract<Shape1, { kind: "triangle" }>;

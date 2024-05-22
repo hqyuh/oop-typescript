@@ -1,44 +1,50 @@
 // Parent class
 abstract class Shape {
-    abstract calculateArea(): number;
+  abstract calculateArea(): number;
 }
 
 // Rectangle class
 class Rectangle extends Shape {
-    constructor(private width: number, private height: number) {
-        super();
-    }
+  constructor(
+    private width: number,
+    private height: number,
+  ) {
+    super();
+  }
 
-    calculateArea(): number {
-        return this.width * this.height;
-    }
+  calculateArea(): number {
+    return this.width * this.height;
+  }
 }
 
 // Circle class
 class Circle extends Shape {
-    constructor(private radius: number) {
-        super();
-    }
+  constructor(private radius: number) {
+    super();
+  }
 
-    calculateArea(): number {
-        return Math.PI * this.radius ** 2;
-    }
+  calculateArea(): number {
+    return Math.PI * this.radius ** 2;
+  }
 }
 
 // Triangle class
 class Triangle extends Shape {
-    constructor(private base: number, private height: number) {
-        super();
-    }
+  constructor(
+    private base: number,
+    private height: number,
+  ) {
+    super();
+  }
 
-    calculateArea(): number {
-        return 0.5 * this.base * this.height;
-    }
+  calculateArea(): number {
+    return 0.5 * this.base * this.height;
+  }
 }
 
 // Function to calculate the area of any shape
 function calculateShapeArea(shape: Shape): number {
-    return shape.calculateArea();
+  return shape.calculateArea();
 }
 
 // Creating instances of different shapes

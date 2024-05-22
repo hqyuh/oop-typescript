@@ -2,6 +2,11 @@
   "name": "oop-typescript",
   "version": "1.0.0",
   "description": "practice oop for 1k2$",
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,ts}\"",
+    "lint": "eslint --config .eslintrc.json . --ext ts",
+    "lint:fix": "eslint --config .eslintrc.json . --ext ts --fix"
+  },
   "dependencies": {
     "node": "^20.12.0",
     "ts-node": "^10.9.2"

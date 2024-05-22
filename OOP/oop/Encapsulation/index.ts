@@ -1,17 +1,18 @@
 class User {
-    constructor(private username: string) {
-        this.username = username;
-    }
+  constructor(private username: string) {
+    this.username = username;
+  }
 
-    getUsername() {
-        return this.username;
-    }
+  getUsername() {
+    return this.username;
+  }
 
-    setUsername(username: string) {
-        this.username = username;
-    }
+  setUsername(username: string) {
+    this.username = username;
+  }
 }
 
-const james = new User('James');
-james.setUsername('hh');
+const james = new User("James");
+
+james.setUsername("hh");
 console.log(james.getUsername());
