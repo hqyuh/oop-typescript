@@ -1,5 +1,5 @@
 // race
-// race returns first promise with shortest delay whether it is resolved or rejected
+// returns first promise with the shortest delay whether it is resolved or rejected
 
 const raceA = new Promise((resolve) => setTimeout(() => resolve("RaceA resolved"), 1000));
 const raceB = new Promise((resolve) => setTimeout(() => resolve("RaceB resolved"), 500));
