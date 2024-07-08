@@ -1,11 +1,12 @@
+/* eslint-disable prefer-const */
 // declare tuple variable
-const hh: [number, string] = [1, 'HH'];
+const hh: [number, string] = [1, "HH"];
 
 // accessing tuple elements
 console.log(hh[1]);
 
 // add elements
-hh.push(2, 'H2');
+hh.push(2, "H2");
 console.log(hh);
 
 // 'const' declarations must be initialized.
@@ -13,5 +14,11 @@ console.log(hh);
 
 // array tuple
 let arr: [number, string][];
-arr = [[1, 'A'], [2, 'B'], [3, 'C']];
+
+arr = [
+  [1, "A"],
+  [2, "B"],
+  [3, "C"],
+];
+
 console.log(arr);

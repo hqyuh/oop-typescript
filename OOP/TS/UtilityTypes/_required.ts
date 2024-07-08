@@ -7,7 +7,7 @@ type Blog = {
   status: boolean;
 };
 
-const handleBlog = (fields: Required<Todo>) => {
+const handleBlog = (fields: Required<Blog>) => {
   return { ...fields };
 };
 

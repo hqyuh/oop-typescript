@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 // Exclude<UnionType, ExcludedMembers>
 // It will remove the ExcludedMembers from UnionType
 

@@ -1,3 +1,4 @@
+/* eslint-disable max-params */
 // Abstraction
 // Can use abstract and interface can express abstraction
 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 // Extract<Type, Union>
 // used to extract Type from Union Type
 

@@ -9,28 +9,23 @@ type BB = {
 }
 */
 
-
-
-
-
 // computed properties => OK
-type Keys = 'name' | 'age';
+type Keys = "name" | "age";
 type CC = {
-    [key in Keys]: string;
-}
+  [key in Keys]: string;
+};
 const cc: CC = {
-    name: 'CC',
-    age: '24'
-}
+  name: "CC",
+  age: "24",
+};
 
 // intersection properties
 type Name2 = {
-    name: string
+  name: string;
 };
 
 type Age2 = {
-    age: number
+  age: number;
 };
 
 type Person2 = Name2 & Age2;
-
