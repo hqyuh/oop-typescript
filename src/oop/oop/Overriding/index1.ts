@@ -1,4 +1,4 @@
-class Person {
+class PersonO1 {
   constructor(
     public firstName: string,
     public lastName: string,
@@ -9,7 +9,7 @@ class Person {
   }
 }
 
-class Teacher extends Person {
+class Teacher extends PersonO1 {
   override get fullName() {
     return `Professor ${super.fullName}`;
   }

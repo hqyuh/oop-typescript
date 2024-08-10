@@ -13,12 +13,12 @@ console.log(hh);
 // it means same hh, hh must be initialized is [1, 'HH]
 
 // array tuple
-let arr: [number, string][];
+let arrTuple: [number, string][];
 
-arr = [
+arrTuple = [
   [1, "A"],
   [2, "B"],
   [3, "C"],
 ];
 
-console.log(arr);
+console.log(arrTuple);

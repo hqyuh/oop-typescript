@@ -2,7 +2,7 @@
 // The static of a class are accessed using the class name and dot notation, without creating an object
 
 class CircleA2 {
-  static pi: number = 3.14;
+  static readonly pi: number = 3.14;
 
   static calculateArea(radius: number) {
     return this.pi * radius * radius;
