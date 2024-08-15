@@ -1,4 +1,4 @@
-import { minBy } from "./../greatFE/minBy";
+import { minBy } from "./../greatFE/min-by";
 
 describe("minBy", () => {
   test("empty input array", () => {

@@ -1,4 +1,4 @@
-import { makeCounter } from "./../greatFE/makeCounter";
+import { makeCounter } from "./../greatFE/make-counter";
 
 describe("makeCounter", () => {
   test("returns a function", () => {
