@@ -12,3 +12,12 @@ let b = 10;
 console.log(a != b && a < b);
 console.log(a > b || a == b);
 console.log(a < b || a == b);
+
+//
+// difference between ++a and a++
+// ++a => increment first then use
+// a++ => use first then increment
+let c = 2;
+console.log(c++); // 2
+let d = 2;
+console.log(++d); // 3
