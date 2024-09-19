@@ -1,12 +1,13 @@
+/* eslint-disable no-prototype-builtins */
 class Person {
-    constructor(name) {
-        // instance properties
-        this.name = name;
-    }
+  constructor(name) {
+    // instance properties
+    this.name = name;
+  }
 }
 
 const john = new Person("John");
-// Step create 
+// Step create
 // 1. New {} is created
 // 2. function is called, this = {}
 // 3. {} linked to prototype
@@ -18,8 +19,8 @@ console.log(john instanceof Person);
 console.log(Person.prototype);
 
 Person.prototype.calcAge = function () {
-    console.log(this.name);
-}
+  console.log(this.name);
+};
 john.calcAge();
 
 console.log(john.__proto__); // __proto__ created from step 3.
@@ -31,10 +32,10 @@ console.log(Object.prototype);
 
 console.dir(Person.prototype.constructor);
 
-
 const arr = [3, 6, 3, 6];
+
 Array.prototype.unique = function () {
-    return [...new Set(this)]; // => 'this' is arr
+  return [...new Set(this)]; // => 'this' is arr
 };
 
 console.log(arr.unique());

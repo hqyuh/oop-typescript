@@ -1,20 +1,21 @@
 class PersonCl {
-    constructor(fullName) {
-        this.fullName = fullName;
-    }
-    getSomeThing() {
-        console.log(this.fullName);
-    }
+  constructor(fullName) {
+    this.fullName = fullName;
+  }
+  getSomeThing() {
+    console.log(this.fullName);
+  }
 
-    set fullName(name) {
-        this._fullName = name;
-    }
+  set fullName(name) {
+    this._fullName = name;
+  }
 
-    get fullName() {
-        return this._fullName;
-    }
+  get fullName() {
+    return this._fullName;
+  }
 }
 
-const person = new PersonCl('John');
+const person = new PersonCl("John");
+
 console.log(person.fullName);
 console.log(person.__proto__ === PersonCl.prototype);
