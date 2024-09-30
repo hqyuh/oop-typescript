@@ -8,7 +8,7 @@ const objHere = {
 Object.defineProperty(objHere, "name", {
   value: "heh",
   enumerable: true,
-  //   configurable: true,
+  // configurable: true,
 });
 
 console.log("hh => ", objHere);
@@ -38,3 +38,24 @@ Object.defineProperties(objHere2, {
 delete objHere2.name;
 
 console.log("🐔 =>  objHere2:", objHere2);
+
+// convert object to array
+console.log(Object.entries(objHere2)); // output: [['name', 'hh'], ['gender', 'male']]
+
+// get array value
+console.log(Object.values(objHere2)); // output: ['hh', 'male']
+
+// get array key
+console.log(Object.keys(objHere2)); // output: ['name', 'gender']
+
+// convert array to object
+const arr = [
+  ["name", "hh"],
+  ["age", 24],
+];
+
+console.log(Object.fromEntries(arr));
+// output: { name: 'hh', age: 24 }
+
+//
+console.log(Object.fromEntries(Object.entries(objHere2)));

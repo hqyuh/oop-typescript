@@ -3,6 +3,8 @@ let obj1: Object = {};
 
 obj1 = 1;
 obj1 = true;
+obj1 = "string";
+obj1 = () => {};
 
 console.log(obj1.toString());
 
@@ -17,7 +19,7 @@ obj2 = [];
 
 obj2 = () => {};
 
-// Object include primitive data type and common properties (toString(), valueOf(), etc..) and cannot be assigned back
+// Object include primitive data type and non-primitive data type and common properties (toString(), valueOf(), etc..) and cannot be assigned back
 // object not included primitive data type and common properties but it have non-primitive data type ({}, [], () => {}) and cannot be assigned back
 // {} same as Object
 
