@@ -2,7 +2,7 @@
     "root": true,
     "env": { "es2020": true, "node": true },
     "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
-    "ignorePatterns": ["node_modules/**/*"],
+    "ignorePatterns": ["node_modules/**/*", "dist", "*/dsa/__tests__"],
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint/eslint-plugin"],
     "rules": {

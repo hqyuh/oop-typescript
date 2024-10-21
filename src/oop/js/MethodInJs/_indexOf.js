@@ -3,4 +3,5 @@
 
 const arr = ["h", "i", "y"];
 const index = arr.indexOf("y");
+
 console.log(index);

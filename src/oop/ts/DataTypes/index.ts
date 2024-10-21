@@ -84,7 +84,7 @@ interface Street {
   location: string;
 }
 
-let street: Street = {
+const street: Street = {
   name: "Main St",
   location: "Downtown",
 };

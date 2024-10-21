@@ -1,6 +1,7 @@
 // push
 // This method adds one or more elements to the end of array and returns the new length of the array.
 const fruits = ["apple", "banana"];
+
 console.log(fruits.push("guava"));
 
 // pop

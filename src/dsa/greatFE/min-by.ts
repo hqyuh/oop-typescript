@@ -14,5 +14,6 @@ export const minBy = <T>(array: Array<T>, iteratee: (value: T) => any): any => {
       result = value;
     }
   }
+
   return result;
 };
