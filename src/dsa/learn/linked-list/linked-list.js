@@ -18,9 +18,11 @@ class LinkedList {
   push(value) {
     const newNode = new Node(value);
 
+    // if the linked list is empty
     if (!this.head) {
       this.head = newNode;
       this.tail = this.head;
+      // if there are n nodes in the list
     } else {
       this.tail.next = newNode;
       this.tail = newNode;
@@ -42,20 +44,20 @@ class LinkedList {
 
     // if there are n nodes in the list
     let temp = this.head;
-    let pre = this.head;
+    let prev = this.head;
 
     while (temp.next) {
-      pre = temp;
+      prev = temp;
       temp = temp.next;
     }
-    this.tail = pre;
+    this.tail = prev;
     this.tail.next = null;
     this.length--;
 
     // if there is only one node in the list
     if (this.length === 0) {
       this.head = null;
-      this.head = null;
+      this.tail = null;
     }
 
     // return temp because it is the node that was removed
@@ -221,6 +223,16 @@ class LinkedList {
     }
 
     return this;
+  }
+
+  /**
+   * Resets the linked list to an empty state.
+   * Sets the head and tail to null and length to 0.
+   */
+  makeEmpty() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
   }
 
   print() {
