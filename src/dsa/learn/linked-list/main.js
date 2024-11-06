@@ -20,10 +20,12 @@ newLinkedList.insert(0, 3);
 
 newLinkedList.remove(1);
 
+newLinkedList.push(30);
+
 console.log("🐔 =>  LinkedList:", newLinkedList);
 
 console.log("Result list =>", newLinkedList.print());
 
-newLinkedList.reverse();
-
-console.log("Result list =>", newLinkedList.print());
+// newLinkedList.reverse();
+// console.log("Result list =>", newLinkedList.print());
+console.log("FindMiddleNode => ", newLinkedList.findMiddleNode());
