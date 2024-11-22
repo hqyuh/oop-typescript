@@ -5,6 +5,7 @@
   "author": "hqyuh",
   "license": "ISC",
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "test": "jest --watch",
     "format": "prettier --write \"**/*.{js,ts}\"",
     "lint": "eslint --config .eslintrc.json . --ext ts",

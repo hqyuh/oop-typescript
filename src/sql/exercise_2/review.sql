@@ -51,7 +51,7 @@ FROM
     pg_indexes
 WHERE
     tablename = 'boxes'
-    AND schemaname = 'public'
+    AND schemaname = 'oop'
 ORDER BY
 	tablename,
     indexname;

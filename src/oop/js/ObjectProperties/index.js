@@ -59,3 +59,20 @@ console.log(Object.fromEntries(arr));
 
 //
 console.log(Object.fromEntries(Object.entries(objHere2)));
+
+// Object.seal(): Prevents adding or removing properties from an object but allows modifying existing properties.
+const objHere3 = {
+  a: 1,
+};
+
+Object.seal(objHere3);
+console.log(Object.isSealed(objHere3));
+objHere3.a = 2;
+delete objHere3.a;
+console.log(objHere3);
+
+// Object.freeze(): Prevents adding, removing, or modifying properties of an object, making it completely immutable.
+const frozenObj = Object.freeze({ b: 1 });
+
+frozenObj.b = 2;
+console.log(frozenObj);

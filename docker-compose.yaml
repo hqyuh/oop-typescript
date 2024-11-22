@@ -1,0 +1,41 @@
+# Docker compose version
+version: "3.7"
+
+services:
+  database: # pgadmin: general/connection
+    container_name: database
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: oop-typescript # pgadmin: general/name
+      PGDATA: /data/postgres
+    volumes:
+      - ./src/databases:/var/lib/data/resources
+      - ./src/databases/oop.sql:/docker-entrypoint-initdb.d/oop.sql
+    ports:
+      - 5432:5432
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: hqh@example.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - 5050:80
+    restart: always
+
+networks:
+  default:
+    name: oop-typescript-network
+
+volumes:
+  postgres_data:
+    driver: local
