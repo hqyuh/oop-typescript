@@ -1,36 +1,55 @@
 # Docker compose version
-version: "3.7"
-
 services:
-  database: # pgadmin: general/connection
-    container_name: database
-    image: postgres:12-alpine
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: oop-typescript # pgadmin: general/name
-      PGDATA: /data/postgres
-    volumes:
-      - ./src/databases:/var/lib/data/resources
-      - ./src/databases/oop.sql:/docker-entrypoint-initdb.d/oop.sql
-    ports:
-      - 5432:5432
-    restart: always
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+  # database: # pgadmin: general/connection
+  #   container_name: database
+  #   image: postgres:12-alpine
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+  #     POSTGRES_DB: oop-typescript # pgadmin: general/name
+  #     PGDATA: /data/postgres
+  #   volumes:
+  #     - ./src/databases:/var/lib/data/resources
+  #     - ./src/databases/oop.sql:/docker-entrypoint-initdb.d/oop.sql
+  #   ports:
+  #     - 5432:5432
+  #   restart: always
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
 
-  pgadmin:
-    container_name: pgadmin
-    image: dpage/pgadmin4:latest
-    environment:
-      PGADMIN_DEFAULT_EMAIL: hqh@example.com
-      PGADMIN_DEFAULT_PASSWORD: root
-    ports:
-      - 5050:80
+  # pgadmin:
+  #   container_name: pgadmin
+  #   image: dpage/pgadmin4:latest
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: hqh@example.com
+  #     PGADMIN_DEFAULT_PASSWORD: root
+  #   ports:
+  #     - 5050:80
+  #   restart: always
+
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
     restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo_backup:/mongo_backup
+
+# connect mongoDB Compass:
+# Connection String: mongodb://root:root@localhost:27017/admin
+# Hostname: localhost
+# Port: 27017
+# Username: root
+# Password: root
+# Authentication Database: admin
+# docker exec -it mongodb mongosh -u root -p root --authenticationDatabase admin
 
 networks:
   default:
@@ -38,4 +57,6 @@ networks:
 
 volumes:
   postgres_data:
+    driver: local
+  mongodb_data:
     driver: local

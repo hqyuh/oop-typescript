@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "practice oop for 1k2$",
   "author": "hqyuh",
+  "type": "module",
   "license": "ISC",
   "scripts": {
     "build": "tsc -p tsconfig.json",

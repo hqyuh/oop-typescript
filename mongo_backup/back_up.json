@@ -1,0 +1,1 @@
+[{"_id":{"$oid":"686d4e57ba37280904baa8b9"},"name":"A","age":25,"city":"Da Nang"},{"_id":{"$oid":"686d4e57ba37280904baa8ba"},"name":"B","age":30,"city":"Da Nang"},{"_id":{"$oid":"686d4e57ba37280904baa8bb"},"name":"C","age":25,"city":"Ha Noi"},{"_id":{"$oid":"686d4e57ba37280904baa8bc"},"name":"D","age":50,"city":"Sai Gon"}]
