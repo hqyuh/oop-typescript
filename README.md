@@ -1,1 +1,1 @@
-# Series of review exercises to pass the interview 2x
+# Series of review exercises to pass the interview
