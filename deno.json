@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "@std/expect": "jsr:@std/expect@^1.0.17"
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"]
+    }
+  }
+}
