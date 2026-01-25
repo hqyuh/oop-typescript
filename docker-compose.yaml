@@ -1,5 +1,53 @@
-# Docker compose version
 services:
+  postgres-primary:
+    image: postgres:16-alpine
+    container_name: postgres-primary
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: app_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - primary_data:/var/lib/postgresql/data
+      - ./primary/postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./primary/pg_hba.conf:/etc/postgresql/pg_hba.conf
+    command: >
+      postgres
+      -c config_file=/etc/postgresql/postgresql.conf
+      -c hba_file=/etc/postgresql/pg_hba.conf
+
+  postgres-replica-1:
+    image: postgres:16-alpine
+    container_name: postgres-replica-1
+    restart: always
+    depends_on:
+      - postgres-primary
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - replica1_data:/var/lib/postgresql/data
+      - ./replica/replica.sh:/docker-entrypoint-initdb.d/01-replica.sh
+
+  postgres-replica-2:
+    image: postgres:16-alpine
+    container_name: postgres-replica-2
+    restart: always
+    depends_on:
+      - postgres-primary
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"
+    volumes:
+      - replica2_data:/var/lib/postgresql/data
+      - ./replica/replica.sh:/docker-entrypoint-initdb.d/01-replica.sh
+
   # database: # pgadmin: general/connection
   #   container_name: database
   #   image: postgres:12-alpine
@@ -19,16 +67,6 @@ services:
   #     interval: 10s
   #     timeout: 5s
   #     retries: 5
-
-  # pgadmin:
-  #   container_name: pgadmin
-  #   image: dpage/pgadmin4:latest
-  #   environment:
-  #     PGADMIN_DEFAULT_EMAIL: hqh@example.com
-  #     PGADMIN_DEFAULT_PASSWORD: root
-  #   ports:
-  #     - 5050:80
-  #   restart: always
 
   mongodb:
     container_name: mongodb
@@ -51,12 +89,7 @@ services:
 # Authentication Database: admin
 # docker exec -it mongodb mongosh -u root -p root --authenticationDatabase admin
 
-networks:
-  default:
-    name: oop-typescript-network
-
 volumes:
-  postgres_data:
-    driver: local
-  mongodb_data:
-    driver: local
+  primary_data:
+  replica1_data:
+  replica2_data:
